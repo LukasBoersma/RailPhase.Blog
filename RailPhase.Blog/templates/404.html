@@ -1,0 +1,26 @@
+﻿{% context RailPhase.HttpRequest,RailPhase %}
+{% extends templates/base.html %}
+{% using RailPhase.Blog %}
+
+{% block title %}404 Not Found{% endblock %}
+
+{% block content_nocontainer %}
+
+<header class="intro-header" style="background: #506 url(/static/background-doodle.svg);">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1>Page Not Found (Error 404)</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <p>The page you are looking for does not exist. If you got this error by clicking on a link, you can contact the website administrator to let him know that he has a broken link.</p>
+  <p>You tried to access this URL: <pre>{{Uri}}</pre></p>
+</div>
+
+{% endblock %}

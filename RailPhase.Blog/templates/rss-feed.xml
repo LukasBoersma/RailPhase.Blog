@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0">
+  {% context RailPhase.Blog.ArticleList,RailPhase.Blog %}
+  {% using RailPhase.Blog %}
+  <channel>
+    <title>
+      RailPhase.Blog
+    </title>
+    <description>
+      A simple showcase application for RailPhase, a modern web application framework for .NET.
+    </description>
+    <link>
+      https://github.com/LukasBoersma/RailPhase
+    </link>
+    <lastBuildDate>
+      {{DateTime.Now.ToRFC822String()}}
+    </lastBuildDate>
+    <pubDate>
+      {{DateTime.Now.ToRFC822String()}}
+    </pubDate>
+    <ttl>
+      1800
+    </ttl>
+    {% for Article in Articles %}
+      <item>
+        <title>
+          {{Article.Title}}
+        </title>
+        <description>
+          {{Article.Summary}}
+        </description>
+        <link>
+          http://localhost/article/{{Article.Slug}}
+        </link>
+        <pubDate>
+          {{Article.PublishDate.ToRFC822String()}}
+        </pubDate>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>

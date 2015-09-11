@@ -1,0 +1,27 @@
+﻿{% context RailPhase.Blog.ArticleList,RailPhase.Blog %}
+{% extends templates/base.html %}
+{% using RailPhase.Blog %}
+
+{% block title %}Archive{% endblock %}
+
+{% block heading_background %} #155 {% endblock %}
+{% block heading %}
+  <div class="site-heading">
+    <h1>Archive</h1>
+  </div>
+{%endblock%}
+
+{% block content %}
+<p>This is a list of all posts on this blog, in descending chronological order.</p>
+<hr>
+{% for article in Articles %}
+<div class="post-preview">
+  <a href="/article/{{article.Slug}}">
+    <h2 class="post-title">{{article.Title}}</h2>
+    <h3 class="post-subtitle">{{article.Summary}}</h3>
+  </a>
+  <p class="post-meta">Posted on {{article.PublishDate.ToHumanDate()}}</p>
+</div>
+{% endfor %}
+
+{% endblock %}

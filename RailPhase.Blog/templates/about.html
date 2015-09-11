@@ -1,0 +1,23 @@
+﻿{% extends templates/base.html %}
+{% using RailPhase.Blog %}
+
+{% block title %}About{% endblock %}
+
+{% block heading_background %} #853 {% endblock %}
+{% block heading %}
+  <div class="site-heading">
+    <h1>About this Blog</h1>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <p>
+    This is not an actual blog. It is a showcase application for <a href="https://github.com/LukasBoersma/RailPhase">RailPhase</a>,
+    a modern web application framework for .NET.
+  </p>
+  <p>
+    You can fork this blog application on <a href="https://github.com/LukasBoersma/RailPhase.Blog">Github</a> to
+    make your own simple blog. You also could use this project as an example if you want to learn how to write
+    your own web applications with RailPhase.
+  </p>
+{% endblock %}

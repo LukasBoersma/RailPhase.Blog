@@ -1,0 +1,18 @@
+﻿{% context RailPhase.Blog.Article,RailPhase.Blog %}
+{% extends templates/base.html %}
+{% using RailPhase.Blog %}
+
+{% block title %}{{Title}}{% endblock %}
+
+
+{% block heading_background %} #833 {% endblock %}
+{% block heading %}
+  <div class="post-heading">
+    <h1>{{Title}}</h1>
+    <span class="meta">Posted on {{PublishDate.ToHumanDate()}}</span>
+  </div>
+{% endblock %}
+
+{% block content %}
+  {{Content}}
+{% endblock %}

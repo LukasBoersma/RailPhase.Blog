@@ -1,0 +1,32 @@
+﻿{% context RailPhase.Blog.ArticleList,RailPhase.Blog %}
+{% extends templates/base.html %}
+{% using RailPhase.Blog %}
+
+{% block title %}RailPhase.Blog{% endblock %}
+{% block title_suffix %}{% endblock %}
+
+
+{% block heading %}
+  <div class="site-heading">
+    <h1><i>RailPhase.Blog</i></h1>
+    <hr class="small">
+    <span class="subheading">A simple showcase application for <a href="https://github.com/LukasBoersma/RailPhase">RailPhase</a>, a modern web application framework for .NET.</span>
+    <span class="meta"></span>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      {% for article in Articles %}
+      <div class="post-preview">
+        <a href="/article/{{article.Slug}}">
+          <h2 class="post-title">{{article.Title}}</h2>
+          <h3 class="post-subtitle">{{article.Summary}}</h3>
+        </a>
+        <p class="post-meta">Posted on {{article.PublishDate.ToHumanDate()}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
